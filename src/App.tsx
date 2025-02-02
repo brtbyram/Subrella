@@ -1,17 +1,23 @@
-import { Button } from "./components/ui/button"
-import { Progress } from "./components/ui/progress"
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
+import Home from './pages/Home';
+import RootLayout from './layouts/RootLayout';
+import Payments from './pages/Payments';
+
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <RootLayout />,
+    children: [
+      { path: '', element: <Home /> },
+      { path: 'payments', element: <Payments /> },
+    ],
+  },
+]);
 
 function App() {
-
-
-  return (
-    <div className="container mx-auto space-y-2"> 
-      <h1 className="p-5 font-bold text-4xl">SUBRELLA</h1>
-      <Button className="bg-red-500">Click me</Button>
-      <Progress value={50} />
-    </div>
-  )
+  return <RouterProvider router={router} />;
 }
 
-export default App
+export default App;
