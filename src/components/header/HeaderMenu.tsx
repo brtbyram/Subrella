@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { logout } from "@/redux/authSlice";
 import { motion } from "framer-motion";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
@@ -20,11 +20,16 @@ import { Button } from "@/components/ui/button";
 import { LogIn, User } from "lucide-react";
 import { Link, NavLink, useNavigate } from "react-router";
 
-export default function HeaderMenu() {
+export default function HeaderMenu(props) {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const { user, token } = useSelector((state: any) => state.auth);
+  // const { user, token } = useSelector((state: any) => state.auth);
+
+  const token = localStorage.getItem("token");
+  const userId = localStorage.getItem("userId");
+
+  console.log(props);
 
   const handleClick = async () => {
     try {
@@ -34,6 +39,8 @@ export default function HeaderMenu() {
         { withCredentials: true }
       );
       console.log("Çıkış başarılı:", response.data);
+      localStorage.removeItem("userId");
+      localStorage.removeItem("token");
       dispatch(logout());
       navigate("/login");
     } catch (error) {
@@ -42,7 +49,7 @@ export default function HeaderMenu() {
   };
   return (
     <>
-      {user && token ? (
+      {userId && token ? (
         <div className="flex justify-center items-center lg:w-1/3 ">
           <DropdownMenu>
             <DropdownMenuTrigger className="">
@@ -65,16 +72,30 @@ export default function HeaderMenu() {
                       AY
                     </AvatarFallback>
                   </Avatar>
-                  <span className="ml-2 font-semibold">{user?.name}</span>
+                  <span className="ml-2 font-semibold">{userId}</span>
                 </DropdownMenuLabel>
                 <DropdownMenuSeparator className="bg-gray-500" />
                 <DropdownMenuGroup>
                   <DropdownMenuItem>
-                    <Link to="/profile">Profile</Link>
+                    <Link to="/profile" className="w-full">
+                      Profile
+                    </Link>
                   </DropdownMenuItem>
-                  <DropdownMenuItem>Billing</DropdownMenuItem>
-                  <DropdownMenuItem>Settings</DropdownMenuItem>
-                  <DropdownMenuItem>Notifications</DropdownMenuItem>
+                  <DropdownMenuItem>
+                    <Link to="/profile" className="w-full">
+                      Billing
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem>
+                    <Link to="/profile" className="w-full">
+                      Settings
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem>
+                    <Link to="/profile" className="w-full">
+                      Notifications
+                    </Link>
+                  </DropdownMenuItem>
                 </DropdownMenuGroup>
                 <DropdownMenuSeparator className="bg-gray-500" />
                 <DropdownMenuGroup>
@@ -94,10 +115,18 @@ export default function HeaderMenu() {
                       </DropdownMenuSubContent>
                     </DropdownMenuPortal>
                   </DropdownMenuSub>
-                  <DropdownMenuItem>New Team</DropdownMenuItem>
+                  <DropdownMenuItem>
+                    <Link to="/profile" className="w-full">
+                      New Team
+                    </Link>
+                  </DropdownMenuItem>
                 </DropdownMenuGroup>
                 <DropdownMenuSeparator className="bg-gray-500" />
-                <DropdownMenuItem>Support</DropdownMenuItem>
+                <DropdownMenuItem>
+                  <Link to="/profile" className="w-full">
+                    Support
+                  </Link>
+                </DropdownMenuItem>
                 <DropdownMenuSeparator className="bg-gray-500" />
                 <Button
                   variant="ghost"
