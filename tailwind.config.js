@@ -5,6 +5,11 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
+        custom: [
+          '"ABC Whyte Inktrap Unlicensed Trial Bold"',
+          '"ABC Whyte Inktrap Unlicensed Trial Bold Placeholder"',
+          'sans-serif'
+        ],
         poppins: ["Poppins", "sans-serif"],
 		montserrat: ["Montserrat", "sans-serif"],
         inter: ["Inter", "sans-serif"],
