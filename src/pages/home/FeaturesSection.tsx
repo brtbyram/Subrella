@@ -58,7 +58,7 @@ export default function FeaturesSection() {
   });
 
   return (
-    <section className="flex items-start md:h-[310vh] container mx-auto stack-area">
+    <section className="flex items-start  container mx-auto stack-area">
       <div className="basis-1/2 h-screen flex flex-col justify-center space-y-5 sticky top-0">
         <h2 className="text-9xl">Our Features</h2>
         <p>
