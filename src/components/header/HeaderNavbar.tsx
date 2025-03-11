@@ -36,8 +36,8 @@ function HeaderNavbar(): any {
               key={item.name}
               to={`${item.name.toLowerCase()}`}
               className={({ isActive }) =>
-                `transition-all hover:scale-110 flex items-center justify-center gap-x-1 ${
-                  isActive ? "text-white border-b-2  p-1" : "text-gray-300 "
+                `text-lg transition-all hover:scale-110 flex items-center justify-center gap-x-1 ${
+                  isActive ? "text-white border-b-2  p-1" : "text-[#fffcef] "
                 }`
               }
             >
