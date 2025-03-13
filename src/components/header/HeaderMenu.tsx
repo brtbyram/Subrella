@@ -147,11 +147,11 @@ export default function HeaderMenu(props) {
           <div className="max-lg:hidden">
             <Button
               variant="outline"
-              className="text-black hover:bg-white text-lg hover:bg-white/90 mr-2 transition-colors"
+              className="text-black hover:bg-white text-lg hover:bg-white/90 mr-2 transition-colors h-10"
             >
               <Link to="/login">Log In</Link>
             </Button>
-            <Button className="bg-[#2563EB] text-lg hover:bg-[#1D4ED8]">
+            <Button className="bg-[#2563EB] text-lg hover:bg-[#1D4ED8] h-10">
               <Link to="/register">Sign Up</Link>
             </Button>
           </div>
