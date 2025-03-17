@@ -8,10 +8,10 @@ module.exports = {
         custom: [
           '"ABC Whyte Inktrap Unlicensed Trial Bold"',
           '"ABC Whyte Inktrap Unlicensed Trial Bold Placeholder"',
-          'sans-serif'
+          "sans-serif",
         ],
         poppins: ["Poppins", "sans-serif"],
-		montserrat: ["Montserrat", "sans-serif"],
+        montserrat: ["Montserrat", "sans-serif"],
         inter: ["Inter", "sans-serif"],
       },
       borderRadius: {
@@ -78,10 +78,16 @@ module.exports = {
             height: "0",
           },
         },
+        sh02: {
+          "0%": { opacity: "0", left: "0%" },
+          "50%": { opacity: "1" },
+          "100%": { opacity: "0", left: "100%" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        sh02: 'sh02 0.5s linear forwards',
       },
     },
   },
