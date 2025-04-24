@@ -133,14 +133,14 @@ export default function Pricing(): any {
               <div
                 className={`flex flex-col min-h-[500px] h-full w-full rounded-3xl p-4 relative transition-all duration-200 shadow-xl ${
                   pkg.popular
-                    ? `border-${pkg.color}-500 border-4 !border-blue-800 bg-gray-700 text-[#f7f6f6] hover:bg-gray-600 my-5 lg:scale-105`
+                    ? `border-${pkg.color}-500 border-4 border-gray-700 bg-gray-700 text-[#f7f6f6] hover:bg-gray-600 my-5 lg:scale-105`
                     : "border bg-gray-100 hover:bg-white"
                 }`}
               >
                 <div>
                   <div className="flex items-center justify-between mb-2">
                     {pkg.popular && (
-                      <div className="bg-[#f7f6f6] text-black rounded-t-3xl  border-b-4 border-blue-800 font-semibold absolute flex items-center justify-center text-xl -top-12 -left-1 -right-1 h-16  text-center">
+                      <div className="bg-[#f7f6f6] text-black rounded-t-3xl font-semibold absolute flex items-center justify-center text-xl -top-12 -left-1 -right-1 h-16  text-center">
                         Most Popular
                       </div>
                     )}
