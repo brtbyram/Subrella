@@ -233,22 +233,9 @@ export default function Contact() {
         </div>
       </div>
 
-      <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 place-items-center gap-4 py-12">
-        <div className="px-4">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
-            <Card className="mt-8 bg-white shadow-md">
-
-
-            </Card>
-          </motion.div>
-        </div>
-
-        <div className="w-10/12 border-8 mb-4 border-[#112d5d] rounded-3xl relative ">
-          <div className="absolute -top-10 -left-10 rounded-full bg-[#112d5d] min-w-24 h-24 flex items-center justify-center z-10 text-white p-6 cursor-pointer group">
+             {/* Google Maps */} 
+             <div className="w-10/12 border-8 border-[#112d5d] rounded-t-3xl relative shadow-xl mx-auto">
+          <div className="absolute -top-10 -left-10 rounded-full bg-[#112d5d] min-w-24 h-24 shadow-xl flex items-center justify-center z-10 text-white p-6 cursor-pointer group">
             <Navigation
               size={40}
               className="transition-all delay-100 duration-200 group-hover:rotate-45"
@@ -260,20 +247,18 @@ export default function Contact() {
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3010.2755075642!2d28.97881851532!3d41.03705297929828!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab7650656bd63%3A0x8ca058b28c20b6c3!2zVGFrc2ltIE1leWRhbsSxLCBHw7xtw7zFn3N1eXUsIDM0NDM1IEJleW_En2x1L8Swc3RhbmJ1bA!5e0!3m2!1str!2str!4v1652345678901!5m2!1str!2str"
             width="100%"
-            height="500"
-            className="blur hover:blur-none transition-all"
-            style={{ border: 0, borderRadius: "1.1rem" }}
-            allowFullScreen
+            height="300"
+            style={{ border: 0, borderTopRightRadius: "1.1rem", boxShadow: "0 10px 40px #112d5d" }}
+            allowFullScreen={true}
             loading="lazy"
           ></iframe>
         </div>
-      </div>
 
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.8 }}
-        className="flex max-sm:flex-col items-center justify-center gap-x-10 py-24 px-6 text-center text-sm bg-[#112d5d] text-[#faf5ec] rounded-t-[2.5rem] sm:rounded-t-[5rem] xl:rounded-t-[10rem] min-h-max h-[500px]"
+        className="flex max-sm:flex-col items-center justify-center gap-x-10 py-24 px-6 text-center text-sm bg-[#112d5d] text-[#faf5ec]  sm:rounded-t-[5rem] xl:rounded-t-[10rem] min-h-max h-[500px]"
       >
         <img
           src="/public/Subscribe to our newsletter.png"
