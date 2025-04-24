@@ -2,15 +2,15 @@ import { createBrowserRouter } from "react-router-dom";
 
 import RootLayout from "../layouts/RootLayout";
 import Payments from "../pages/Payments";
-import Subscriptions from "../pages/Subscriptions";
+import Subscriptions from "../pages/subscriptions/Subscriptions";
 import Analyzes from "../pages/Analyzes";
 import Pricing from "../pages/Pricing";
-import Register from "../pages/Register";
-import Login from "../pages/Login";
+import Register from "../pages/auth/Register";
+import Login from "../pages/auth/Login";
 import Contact from "../pages/Contact";
 
 import ProtectedRoute from "./ProtectedRoute";
-import AboutUsPage from "@/pages/About";
+import AboutUsPage from "@/pages/about/About";
 import Dashboard from "@/pages/Dashboard";
 import Profile from "@/pages/Profile";
 import WelcomePage from "@/pages/Welcome";
@@ -21,8 +21,6 @@ const routes = [
     element: <RootLayout />,
     children: [
       { path: "", element: <ProtectedRoute /> },
-      { path: "login", element: <Login /> },
-      { path: "register", element: <Register /> },
       { path: "welcome", element: <WelcomePage /> },
       { path: "profile", element: <Profile /> },
       { path: "about", element: <AboutUsPage /> },
@@ -31,9 +29,11 @@ const routes = [
       { path: "dashboard", element: <Dashboard /> },
       { path: "payments", element: <Payments /> },
       { path: "subscriptions", element: <Subscriptions /> },
-      { path: "analyzes", element: <Analyzes /> },
+      { path: "analytics", element: <Analyzes /> },
     ],
   },
+  { path: "/login", element: <Login /> },
+  { path: "/register", element: <Register /> },
 ];
 
 const router = createBrowserRouter(routes);
