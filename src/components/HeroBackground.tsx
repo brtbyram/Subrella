@@ -1,8 +1,6 @@
 "use client";
 
 import { motion, Variants } from "framer-motion";
-import Image from "next/image";
-// shadcn/ui veya benzeri tasarım sistemi buton bileşeni
 import { Button } from "@/components/ui/button";
 
 const waveVariants: Variants = {

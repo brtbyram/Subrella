@@ -30,13 +30,13 @@ function InfineteScrollSection() {
             animationPlayState: "running",
           }}
           onMouseEnter={() => {
-            const items = document.querySelectorAll(".item");
+            const items = document.querySelectorAll<HTMLElement>(".item");
             items.forEach((item) => {
               item.style.animationPlayState = "paused";
             });
           }}
-          onMouseLeave={(e) => {
-            const items = document.querySelectorAll(".item");
+          onMouseLeave={() => {
+            const items = document.querySelectorAll<HTMLElement>(".item");
             items.forEach((item) => {
               item.style.animationPlayState = "running";
             });

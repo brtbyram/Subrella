@@ -2,9 +2,7 @@ import { createSubscription } from "../../services/subscriptions.js";
 import * as Yup from "yup";
 import {
   Card,
-  CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
@@ -57,7 +55,7 @@ export default function AddSubModal() {
   });
 
   const nextStep = () => {
-    const fields = document.querySelectorAll("input, select");
+    const fields = document.querySelectorAll<HTMLInputElement>("input, select");
     fields.forEach((field) => {
       field.reportValidity();
     });
@@ -201,7 +199,6 @@ export default function AddSubModal() {
                         <div>
                           <Label htmlFor="currency">Para Birimi</Label>
                           <Select
-                            id="currency"
                             name="currency"
                             value={values.currency}
                           >
@@ -265,7 +262,8 @@ export default function AddSubModal() {
                         <div className="flex items-center space-x-2">
                           <Field
                             name="autoRenew"
-                            render={({ field }) => (
+                            render={ ({ field } : any
+                            ) => (
                               <Switch
                                 checked={field.value}
                                 onCheckedChange={field.onChange}

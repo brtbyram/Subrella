@@ -1,7 +1,7 @@
 import { Link } from "react-router";
 import SocialList from "../SocialList";
 
-export default function Footer(): any {
+export default function Footer(): JSX.Element {
   return (
     <footer className="bg-[#F9FFF6] text-[#1E293B] py-8 px-4 font-custom">
       <div className="container mx-auto">
@@ -33,8 +33,7 @@ export default function Footer(): any {
                   height="40px"
                   fill="currentColor"
                   xmlns="http://www.w3.org/2000/svg"
-                  alt="Deputy on Google Play"
-                  class="bg-white"
+                  className="bg-white"
                 >
                   <path
                     data-v-3a111122=""
@@ -220,8 +219,6 @@ export default function Footer(): any {
                   height="40px"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
-                  alt="Deputy on Apple Store"
-                  class=""
                 >
                   <path
                     data-v-3a111122=""

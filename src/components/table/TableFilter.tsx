@@ -1,5 +1,17 @@
 
-function Filter({ column }) {
+
+interface FilterProps {
+  column: {
+    getFilterValue: () => string;
+    setFilterValue: (value: string) => void;
+    columnDef: {
+      header: string;
+    };
+  };
+}
+
+
+function Filter({ column } : FilterProps) {
   const columnFilterValue = column.getFilterValue();
 
   return (

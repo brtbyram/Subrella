@@ -35,8 +35,7 @@ function MobileAppSection() {
                 height="40px"
                 fill="currentColor"
                 xmlns="http://www.w3.org/2000/svg"
-                alt="Deputy on Google Play"
-                class="bg-white"
+                className="bg-white"
               >
                 <path
                   data-v-3a111122=""
@@ -222,8 +221,7 @@ function MobileAppSection() {
                 height="40px"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                alt="Deputy on Apple Store"
-                class="bg-white"
+                className="bg-white"
               >
                 <path
                   data-v-3a111122=""

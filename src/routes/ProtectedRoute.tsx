@@ -1,5 +1,5 @@
 import Home from "@/pages/home/Home";
-import Dashboard from "@/pages/Dashboard.js";
+import Dashboard from "@/pages/Dashboard";
 
 const ProtectedRoute = () => {
   if (localStorage.getItem("token")) {

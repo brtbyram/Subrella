@@ -5,7 +5,18 @@ import Modal from "@/components/modals";
 import Sidebar from "@/components/sidebar/Sidebar";
 import { useSelector } from "react-redux";
 
-function RootLayout(): any {
+interface RootState {
+  auth: {
+    user: {
+      id: string;
+      name: string;
+      email: string;
+    } | null;
+    };
+  };
+
+
+function RootLayout(): JSX.Element {
 
   const { user} = useSelector((state: RootState) => state.auth);
 

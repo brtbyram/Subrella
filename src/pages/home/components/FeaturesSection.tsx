@@ -2,7 +2,15 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { useEffect } from "react";
 
-const FeatureCard = ({ title, description, className, img }: any) => {
+const FeatureCard = ({
+  title,
+  description,
+  className,
+}: {
+  title: string;
+  description: string;
+  className?: string;
+}) => {
   return (
     <div
       className={`h-[350px] w-[350px] p-4 text-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 overflow-hidden card rounded-3xl transition-all duration-500 ease-in-out ${className}`}
@@ -15,12 +23,12 @@ const FeatureCard = ({ title, description, className, img }: any) => {
       </div>
     </div>
   );
-}; 
+};
 
 export default function FeaturesSection() {
   useEffect(() => {
-    const stackArea = document.querySelector(".stack-area");
-    const cards = document.querySelectorAll(".card");
+    const stackArea = document.querySelector<HTMLElement>(".stack-area");
+    const cards = document.querySelectorAll<HTMLElement>(".card");
 
     function rotateCards() {
       let angle = 0;
@@ -58,7 +66,7 @@ export default function FeaturesSection() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-  
+
   return (
     <section className="bg-gradient-to-b from-gray-200 to-white">
       <div className="stack-area relative flex h-[100vh] w-full">
@@ -80,31 +88,26 @@ export default function FeaturesSection() {
             title="Save"
             description="Cancel unused subscriptions"
             className="bg-[#2563EB]"
-            img="/public/features-save.png"
           />
           <FeatureCard
             title="Track"
             description="View all subscriptions clearly"
             className="bg-[#112d5d]"
-            img="/public/features-track.png"
           />
           <FeatureCard
             title="Notify"
             description="Never miss payment deadlines"
             className="bg-[#3B82F6]"
-            img="/public/features-notify.png"
           />
           <FeatureCard
             title="Secure"
             description="Data encrypted and secure"
             className="bg-[#1E40AF]"
-            img="/public/features-secure.png"
           />
           <FeatureCard
             title="Analyze"
             description="Monitor spending trends"
             className="bg-[#F3F4F6] text-black"
-            img="/public/features-analyze.png"
           />
         </div>
       </div>

@@ -20,7 +20,7 @@ import { Button } from "@/components/ui/button";
 import { LogIn, User } from "lucide-react";
 import { Link, NavLink, useNavigate } from "react-router";
 
-export default function HeaderMenu(props) {
+export default function HeaderMenu(){
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -28,8 +28,6 @@ export default function HeaderMenu(props) {
 
   const token = localStorage.getItem("token");
   const userId = localStorage.getItem("userId");
-
-  console.log(props);
 
   const handleClick = async () => {
     try {

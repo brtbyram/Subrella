@@ -1,25 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { ScrollArea } from "@/components/ui/scroll-area";
-import {
-  Facebook,
-  Twitter,
-  Linkedin,
-  Instagram,
-  ArrowRight,
-} from "lucide-react";
 import MissionSection from "./components/MissionSection";
 import HeroSection from "./components/HeroSection";
 import JourneySection from "./components/JourneySection";
@@ -27,46 +7,6 @@ import ValuesSection from "./components/ValuesSection";
 import TeamSection from "./components/TeamSection";
 import VisionSection from "./components/VisionSection";
 
-const teamMembers = [
-  {
-    name: "Ahmet Yılmaz",
-    role: "Kurucu & CEO",
-    image: "/placeholder.svg?height=100&width=100",
-  },
-  {
-    name: "Ayşe Kaya",
-    role: "CTO",
-    image: "/placeholder.svg?height=100&width=100",
-  },
-  {
-    name: "Mehmet Demir",
-    role: "Tasarım Direktörü",
-    image: "/placeholder.svg?height=100&width=100",
-  },
-  {
-    name: "Zeynep Şahin",
-    role: "Müşteri İlişkileri Yöneticisi",
-    image: "/placeholder.svg?height=100&width=100",
-  },
-];
-
-const testimonials = [
-  {
-    name: "Ali Veli",
-    company: "Tech Co.",
-    text: "Subrella sayesinde aboneliklerimizi çok daha kolay yönetiyoruz. Harika bir ürün!",
-  },
-  {
-    name: "Ayşe Yılmaz",
-    company: "Startup Inc.",
-    text: "Kullanımı çok kolay ve tasarruf etmemize gerçekten yardımcı oluyor. Kesinlikle tavsiye ederim.",
-  },
-  {
-    name: "Mehmet Kaya",
-    company: "Big Corp",
-    text: "Subrella'ı keşfettiğimize çok memnunuz. Şirketimizin abonelik yönetimini tamamen değiştirdi.",
-  },
-];
 
 export default function AboutUsPage() {
   return (

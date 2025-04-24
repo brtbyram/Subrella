@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Navigation, Pagination, A11y } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper as SwiperType } from "swiper/types";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -10,7 +11,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 function TestimonialsSection() {
 
-  const swiperRef = useRef(); // Swiper instance referansı
+  const swiperRef = useRef<SwiperType | null>(null); // Swiper instance'ını tutmak için useRef kullanılır
 
   const testimonials = [
     {

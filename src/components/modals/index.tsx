@@ -26,7 +26,7 @@ export default function Modal() {
           <Button
             variant="ghost"
             className="bg-[#112d5d] text-white px-4 py-2 mt-4 rounded"
-            onClick={() => dispatch(closeModal({ content: "", isOpen: false }))}
+            onClick={() => dispatch(closeModal())}
           >
             X
           </Button>

@@ -110,7 +110,8 @@ export default function SubscriptionsTable() {
         header: "Durum",
         sortFn: sortStatusFn,
         cell: (info) => {
-          const status = info.getValue();
+          const status = info.getValue() as string;
+          if(!status) return null; // status yoksa null döner
           return (
             <span
               className={`px-2 py-1 text-xs rounded-full ${
@@ -137,7 +138,7 @@ export default function SubscriptionsTable() {
       {
         accessorKey: "actions",
         header: "Actions",
-        cell: (info) => (
+        cell: () => (
           <DropdownMenu>
             <DropdownMenuTrigger className="bg-black text-white py-1.5 p-2.5 rounded-md">
               Yönet
@@ -176,7 +177,7 @@ export default function SubscriptionsTable() {
 
   const table = useReactTable({
     columns,
-    data: data || [],
+    data: data || [], 
     debugTable: true,
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(), //client-side sorting

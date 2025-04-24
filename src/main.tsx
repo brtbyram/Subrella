@@ -10,15 +10,18 @@ import { GoogleOAuthProvider } from "@react-oauth/google";
 
 
 const queryClient = new QueryClient({
-  fetchOptions: {
-    credentials: "include", // Oturum bilgilerini gönder (cookie) 
-  },
   defaultOptions: {
     queries: {
       staleTime: 5 * 60 * 1000, // 5 dakika boyunca veri bayatlamaz
-      cacheTime: 10 * 60 * 1000, // 10 dakika boyunca önbellekte kalır
+      gcTime: 10 * 60 * 1000,   // 10 dakika boyunca önbellekte kalır
       refetchOnWindowFocus: false, // Pencere odağa geldiğinde yeniden fetch etmez
-      refetchIntervalInBackground : true, // Arka planda yeniden fetch etmez
+      refetchIntervalInBackground: true, // Arka planda yeniden fetch etmeye devam eder
+      queryFn: async ({ queryKey }) => {
+        const response = await fetch(queryKey[0] as string, {
+          credentials: "include",
+        });
+        return response.json();
+      },
     },
   },
 });

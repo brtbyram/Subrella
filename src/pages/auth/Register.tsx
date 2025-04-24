@@ -16,7 +16,7 @@ import {
 } from "lucide-react";
 import { useDispatch } from "react-redux";
 import { setCredentials } from "../../redux/authSlice.js";
-import { useRegister } from "../../services/auth.js";
+import { useRegister } from "../../services/auth";
 import AuthBanner from "./AuthBanner.js";
 
 // Yup ile form doğrulama şeması
@@ -45,7 +45,7 @@ export default function Register() {
       const { token, name, userId, email } = await register.mutateAsync(values);
       localStorage.setItem("userId", userId);
       localStorage.setItem("token", token);
-      dispatch(setCredentials({ user: { name, userId, email } }));
+      dispatch(setCredentials({ user: { name, userId, email }, token }));
       navigate("/welcome");
     } catch (error) {
       console.error("Kayıt sırasında bir hata oluştu", error);

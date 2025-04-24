@@ -15,9 +15,6 @@ import {
   CreditCard,
   Bell,
   Tag,
-  TrendingUp,
-  PieChart,
-  Users,
   Smartphone,
   Laptop,
   Tv,
@@ -154,7 +151,7 @@ export default function DetailSubModal() {
     })) || [];
 
   const deviceUsageData =
-    subscription?.customFields?.supportedDevices?.map((device, index) => ({
+    subscription?.customFields?.supportedDevices?.map((device) => ({
       name: device,
       value: 100 / (subscription?.customFields?.supportedDevices?.length || 1),
     })) || [];
@@ -444,7 +441,7 @@ export default function DetailSubModal() {
                           `${name} ${(percent * 100).toFixed(0)}%`
                         }
                       >
-                        {deviceUsageData.map((entry, index) => (
+                        {deviceUsageData.map((_, index) => (
                           <Cell
                             key={`cell-${index}`}
                             fill={COLORS[index % COLORS.length]}

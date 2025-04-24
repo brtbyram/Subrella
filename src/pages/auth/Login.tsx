@@ -31,7 +31,7 @@ export default function Login() {
       const { token, name, userId, email } = await login.mutateAsync(values);
       localStorage.setItem("userId", userId);
       localStorage.setItem("token", token);
-      dispatch(setCredentials({ user: { name, userId, email } }));
+      dispatch(setCredentials({ user: { name, userId, email } , token }));
       navigate("/");
     } catch (error) {
       console.error("Kayıt sırasında bir hata oluştu", error);

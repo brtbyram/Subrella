@@ -1,8 +1,16 @@
-import React from "react";
 import { NavLink } from "react-router";
 
+interface TeamMemberProps {
+  name: string;
+  role: string;
+  image: string;
+  description: string;
+}
+
+
 function TeamSection() {
-  const TeamMember = ({ name, role, image, description }) => {
+
+  const TeamMember = ({ name, role, image, description } : TeamMemberProps) => {
     return (
       <div className="bg-white shadow-lg rounded-2xl border-2 flex flex-col items-center text-center transition-all hover:shadow-xl">
         <img
