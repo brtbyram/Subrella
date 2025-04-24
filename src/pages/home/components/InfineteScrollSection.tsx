@@ -45,7 +45,7 @@ function InfineteScrollSection() {
           <img
             src={logo}
             alt="logo"
-            loading="lazy"
+
             className="w-full object-contain grayscale hover:grayscale-0 transition-all duration-300 h-12"
           />
         </button>
